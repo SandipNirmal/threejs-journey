@@ -8,10 +8,11 @@ This turborepo uses [Yarn](https://classic.yarnpkg.com/) as a package manager. I
 
 ### Apps and Packages
 
-- `docs`: a [Next.js](https://nextjs.org/) app
-- `web`: another [Next.js](https://nextjs.org/) app
-- `ui`: a stub React component library shared by both `web` and `docs` applications
-- `eslint-config-custom`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
+**Apps**
+
+Different framework libraries with there respective threejs supported libraries.
+
+**Packages**
 - `tsconfig`: `tsconfig.json`s used throughout the monorepo
 
 Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
@@ -40,6 +41,14 @@ To develop all apps and packages, run the following command:
 ```
 cd my-turborepo
 yarn run dev
+```
+
+To run specific app, run following command:
+
+for ex: to run only **vanilla-three** app
+
+```
+yarn dev:vanilla
 ```
 
 ### Remote Caching

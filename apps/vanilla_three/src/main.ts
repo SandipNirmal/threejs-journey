@@ -11,7 +11,7 @@ import {
 } from "three";
 
 // assets
-const mountain = new TextureLoader().load("./assets/mountain.jpg");
+const mountain = new TextureLoader().load('./assets/mountain.jpg');
 
 const scene = new Scene();
 const camera = new PerspectiveCamera(
@@ -44,12 +44,14 @@ const material = new MeshBasicMaterial({
 const mesh = new Mesh(geometry, material);
 
 
-const donut = new TorusGeometry(2, 1, 2, 40);
-const donutMat = new MeshBasicMaterial( { color: 0x0000ff } )
+const donut = new TorusGeometry(1.2, .5, 16, 40);
+const donutMat = new MeshBasicMaterial( { color: 0x0000ff, wireframe: true } )
 const donutMesh = new Mesh(donut, donutMat)
 
+donutMesh.position.y = 1.8
+
 scene.add(mesh);
-// scene.add(donutMesh)
+scene.add(donutMesh)
 
 camera.position.z = 5;
 
@@ -61,7 +63,7 @@ function animate() {
   // mesh.rotation.x += 0.01;
   // mesh.rotation.y += 0.01;
 
-  donutMesh.rotation.x += 0.01;
+  // donutMesh.rotation.x += 0.01;
   donutMesh.rotation.y += 0.01;
 
   renderer.render(scene, camera);
